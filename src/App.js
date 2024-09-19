@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { Button } from "reactstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import Home from './components/Home';
+import Course from './components/Course';
+import AllCourses from './components/AllCourses';
+import AddCourse from './components/AddCourse';
 
 function App() {
+  const btnHandle = () => {
+    toast.success("Done",{
+      position: "top-center",
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ToastContainer/>
+      <Home/>
+      <AllCourses/>
+      <AddCourse/>
     </div>
   );
 }
